@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successfully Signed In</title>
+    <style>
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .user-info {
+            text-align: left;
+            margin: 20px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .home-button {
+            color: #4285f4;
+            border: 1px solid #4285f4;
+        }
+        .home-button:hover {
+            background-color: #4285f4;
+            color: white;
+        }
+        .logout-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .logout-button:hover {
+            background-color: #bb2d3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #333; margin-bottom: 20px;">Successfully signed in!</h1>
+        <img src="{{.Picture}}" alt="Profile Picture" class="profile-img">
+        <div class="user-info">
+            <p><strong>Name:</strong> {{ .Name }}</p>
+            <p><strong>Email:</strong> {{ .Email }}</p>
+            <p><strong>Access Token:</strong> {{ .AccessToken }}</p>
+        </div>
+        <div class="button-container">
+            <a href="/" class="button home-button">Back to Home</a>
+            <a href="/logout" class="button logout-button">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
